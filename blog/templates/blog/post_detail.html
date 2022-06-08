@@ -1,0 +1,72 @@
+{%extends "blog/base.html" %}
+{% block css %}
+.card-img-topp {
+    width: fit-content;
+    height:400px;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+{% endblock%}
+{% block content %}
+<img src="/media/{{post.image}}" class="card-img-topp" alt="..." >
+<div class="card" style="width: 100%">
+
+<div class="card-body">
+
+
+<h1 class="card-title">{{ post.title}} <br></h1>
+
+ <p class="card-text"><small class="text-muted" >by {{post.author}}</small></p>
+
+{% if post.published_date %}
+ <p class="card-text"><small class="text-muted">
+  {{post.published_date}}
+
+</small></p>
+{% else%}
+<a  class= "btn btn-primary " href="{%url 'post_publish' pk=post.pk%}">Publish</a>
+{% endif %}
+
+ <p class="card-text">
+<br>{{post.text}}</p>
+
+{% ifequal user post.author %}
+  <a class= 'btn btn-primary' href="{% url 'post_edit' pk=post.pk%}">Edit
+
+  </a>
+  <a class= 'btn btn-primary' href="{% url 'post_remove' pk=post.pk%}">Remove
+
+
+  </a>
+{% endifequal %}
+
+
+
+<hr>
+{% if user.is_authenticated %}
+ <p class="card-text"><a class='btn btn-primary' href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comments</a></p>
+{% else %}
+ <p class="card-text"><a class='btn btn-primary ' href="{% url 'register' %}">Comments</a></p>
+{% endif %}
+</div>
+<div class="card-body" style="width:fit-content">
+
+  {% for comment in post.comments.all %}
+
+<div class="border">
+
+
+<p class="card-text">{{comment.text|safe|linebreaks}}</p>
+  <p class="card-text "><small class="text-muted">posted By :{{comment.writer}} {{comment.created_date}}</p></small>
+</div><hr>
+
+{% empty %}
+<p class="card-text">No comments!</p>
+  {% endfor %}
+
+</div>
+</div>
+{% endblock%}

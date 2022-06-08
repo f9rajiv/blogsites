@@ -1,0 +1,40 @@
+anyascii==0.3.1
+asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
+beautifulsoup4==4.9.3
+certifi==2022.5.18.1
+charset-normalizer==2.0.12
+Django @ file:///tmp/build/80754af9/django_1625585912945/work
+django-countries==7.3.2
+django-filter==21.1
+django-modelcluster==5.3
+django-taggit==2.1.0
+django-treebeard==4.5.1
+djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1639677796037/work
+draftjs-exporter==2.1.7
+et-xmlfile==1.1.0
+gunicorn==20.1.0
+html5lib==1.1
+idna==3.3
+l18n==2021.3
+mysql-connector==2.2.9
+mysqlclient==2.1.0
+openpyxl==3.0.9
+Pillow==9.1.0
+psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+pytz==2021.3
+requests==2.27.1
+six==1.16.0
+soupsieve==2.3.2.post1
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+tablib==3.2.1
+telepath==0.2
+typing_extensions @ file:///opt/conda/conda-bld/typing_extensions_1647553014482/work
+urllib3==1.26.9
+wagtail==2.16.2
+webencodings==0.5.1
+whitenoise==6.2.0
+Willow==1.4.1
+wincertstore==0.2
+xlrd==2.0.1
+XlsxWriter==3.0.3
+xlwt==1.3.0

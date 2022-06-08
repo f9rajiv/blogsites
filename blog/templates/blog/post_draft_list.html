@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+{% for post in posts %}
+
+<div class="post">
+  <p class='date'>created:{{ post.created_date|date:'d-m-y' }}</p>
+  <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+  <p>{{ post.text|truncatechars:200 }}</p>
+</div>
+ {% endfor %}
+{% endblock %}
+<!-- <div class="d-flex align-content-stretch flex-wrap">
+  {% for post in posts %}
+  <div class="col mb-4">
+
+<div class="card-deck">
+
+  <div class="card" >
+  <a href="{%url 'post_detail' pk=post.pk %}">  <img src="/media/{{post.image}}" class="card-img-topp" alt="..." ></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted"> published on :{{post.published_date}}</small></p>
+
+
+  </div>
+  </div>
+  </div>
+    </div>
+    {% endblock%} -->
