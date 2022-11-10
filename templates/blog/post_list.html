@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="../static/assets/vendor/bootstrap/css/bootstrap-grid.min.css">  
+
+{% endblock style %}
+{% block body %}
+
+<div class="d-flex align-content-stretch flex-wrap">
+  {% for post in post_list %}
+  <div class="col mb-4">
+
+<div class="card-deck">
+
+  <div class="card" >
+  <a class="card-img" href="{%url 'post_detail' pk=post.pk %}">  <img src="../media/{{post.image}}" class="card-img-topp" alt="..." ></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+      <p class="card-text">{{post.text | truncatechars:100}} <a href="{%url 'post_detail' pk=post.pk %}" class="border text-muted">Read more</a> </p>
+      <p class="card-text"><small class="text-muted"> published on :{{post.published_date}}</small></p>
+
+    <p class="card-text" >
+        <a href="{% url 'post_detail' pk=post.pk %}"  class="border">Comments</a>
+    </p>
+  </div>
+  </div>
+  </div>
+    </div>
+
+
+  {% endfor %}
+  </div>
+
+
+
+
+<!-- <div class="centerstage">
+  {% for post in post_list %}
+  <div class="post">
+
+
+<h1> <a href="{%url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h1>
+  <img src="/media/{{post.image}}" class="card-img-top" alt="..." height="250px">
+<div class="date">
+  <p> published on :{{post.published_date}}</p>
+
+</div>
+<a href="{% url 'post_detail' pk=post.pk %}">Comments:{{post.approve_comments.count}}</a>
+  </div>
+    {% endfor%}
+</div> -->
+
+{% endblock body %}

@@ -13,7 +13,7 @@ class PostForm(forms.ModelForm):
 
         widgets={
         'title':forms.TextInput(attrs={'class':'textinputclass'}),
-        'text' :forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'})#postcontent,textinputclass is our own class
+        'text' :forms.Textarea(attrs={'class':'textarea postcontent'})#postcontent,textinputclass is our own class
                                                                                          #editable and medium editor text area are imported css which kind of gives it the styling of the actual medium editor.
                 }
 

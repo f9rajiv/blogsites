@@ -9,9 +9,10 @@ urlpatterns =[
     path("profile/", views.profile, name="profile"),
     path("edit_profile/", views.edit_profile, name="edit_profile"),
     path("user_profile/<int:myid>/", views.user_profile, name="user_profile"),
-
-
-    path('',views.PostListView.as_view(),name='post_list'),
+    
+    path('',views.index,name='main'),
+    path('post/',views.PostListView.as_view(),name='post_list'),
+    # path('',views.PostListView.as_view(),name='post_list'),
     path('about/',views.AboutView.as_view(),name='about'),
     # path("add_blogs/", views.add_blogs, name="add_blogs"),
     path('drafts/',views.DraftListView.as_view(),name='post_draft_list'),

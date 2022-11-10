@@ -17,10 +17,12 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
 class Post(models.Model):
+    # post_id=models.AutoField(primary_key=True)
     author = models.ForeignKey(User,on_delete=models.CASCADE) #only person has power i.e. create superuser can do all
     title= models.CharField(max_length=200)
     text=models.TextField()
     image = models.ImageField(upload_to="photos", blank=True, null=True)
+    # slug=models.CharField(max_length=100)
     created_date=models.DateTimeField(default=timezone.now)
     published_date=models.DateTimeField(blank=True,null=True)
 

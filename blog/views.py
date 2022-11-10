@@ -12,6 +12,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView
 # Create your views here.
 
+def index(request):
+    return render(request, 'index.html')
+
 def user_profile(request, myid):
     post = Post.objects.filter(id=myid)
     return render(request, "user_profile.html", {'post':post})
@@ -40,7 +43,7 @@ class AboutView(TemplateView):
     template_name='about.html'
 
 class PostListView(ListView):
-
+    template_name='post_list.html'
     model =Post   #connect to post model
 
     def get_queryset(self): #like sql query in django __lte is lessthanequal_to and '-' sign is about decesnding order print
@@ -56,8 +59,8 @@ class PostDetailView(DetailView):
 class CreatePostView( LoginRequiredMixin,CreateView):
 
     login_url ='/login/'
-    redirect_field_name ='blog/post_detail.html'
-
+    redirect_field_name ='post_detail.html'
+    # template_name='post_detail.html'
     form_class=PostForm
     model =Post
     def form_valid(self, form):
@@ -68,7 +71,7 @@ class PostUpdateView( LoginRequiredMixin,UpdateView):
 
 
     login_url ='/login/'
-    redirect_field_name ='blog/post_detail.html'
+    redirect_field_name ='post_detail.html'
     form_class=PostForm
     model =Post
 
@@ -80,7 +83,7 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
 class DraftListView(LoginRequiredMixin,ListView):
 
     login_url ='/login/'
-    redirect_field_name ='blog/post_draft_list.html'
+    redirect_field_name ='post_draft_list.html'
     model=Post
 
     def get_queryset(self): #like sql query in django __lte is lessthanequal_to and '-' sign is about decesnding order print
@@ -157,7 +160,8 @@ def Register(request):
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-        return render(request, 'login.html')
+        messages.success(request,"Signed up successfully!!")
+        return redirect('login')
     return render(request, "register.html")
 
 def Login(request):
@@ -173,7 +177,7 @@ def Login(request):
             return redirect("/")
         else:
             messages.error(request, "Invalid Credentials")
-        return render(request, 'base.html')
+            return redirect("/")
     return render(request, "login.html")
 
 def Logout(request):

@@ -1,0 +1,126 @@
+
+.mr{
+  min-height: 100vh;
+  width: 100%;
+  font-size: 14px;
+  background: linear-gradient(225deg,#e91e63,#03a9f4);
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.section-title h4 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.mr .container3 {
+  position: relative;
+  background-color: #c53636;
+  width: 220px;
+  height: 220px;
+  padding: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 60px 5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  transition: width 0.4s, height 0.4s,
+  border-radius 0.4s;
+
+}
+
+/* .mr .container3:hover {
+  width: 340px;
+  height: 340px;
+  border-radius: 4px;
+} */
+
+.mr .img-container3 {
+  width: 170px;
+  height: 170px;
+  min-height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mr .img-container3 img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.full-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.role,
+.description {
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.role {
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #ffbe44;
+}
+
+.social-container3 {
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-container3 button {
+  border: none;
+  outline: none;
+  color: #eee;
+  background: none;
+  width: 20px;
+  height: 40px;
+  font-size: 1.7em;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.container3:hover .social-container3 button {
+  transform: translateX(60px);
+  transition-delay: 0.3s;
+}
+
+.container3:hover .social-container3 button:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.container3:hover .social-container3 button:nth-child(3) {
+  transition-delay: 0.7s;
+}
