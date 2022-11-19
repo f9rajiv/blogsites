@@ -8,7 +8,7 @@
       <h2>Create your own Blogs and Explore</h2><br>
 
           {% if user.is_authenticated %}
-            <h2 style="border-bottom: 4px solid #00bb64;text-transform: uppercase;">hello! &nbsp;{{request.user}}</h2>
+            <h2 style="border-bottom: 4px solid #9b9d9c;text-transform: uppercase;">hello! &nbsp;{{request.user}}</h2>
             <a href="/post/new" class="btn-about">Create Blog</a>
           {% else %}
             <h2>Please Login to Continue</h2>
