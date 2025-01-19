@@ -26,7 +26,7 @@ SECRET_KEY = 'g(dm-=$w0_8tp0k%$0a*3@)mphgldfc6$3br-$grqt))bz(j*1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mysite.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['blogsites.onrender.com','127.0.0.1']
 
 
 # Application definition
